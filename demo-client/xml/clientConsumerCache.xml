@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE client-cache PUBLIC
+"-//GemStone Systems, Inc.//GemFire Declarative Caching 7.0//EN"
+"http://www.gemstone.com/dtd/cache7_0.dtd">
+<client-cache>
+	<!-- TODO-03: Ensure that subscriptions are enabled on the pool -->
+	<pool name="client" subscription-enabled="true">
+		<locator host="localhost" port="41111"/>
+	</pool>
+		<pdx read-serialized="true">
+		<pdx-serializer>
+			<class-name>com.gemstone.gemfire.pdx.ReflectionBasedAutoSerializer</class-name>
+			<parameter name="classes">
+				<string>com.pivotal.demo.model.*</string>
+			</parameter>
+		</pdx-serializer>
+	</pdx>       
+	<region name="person-region">
+		<!-- TODO-04: Modify the region attributes to register the LoggingCacheListener. Be sure to provide a String parameter
+		              representing the filename -->
+		<region-attributes refid="CACHING_PROXY">
+			<cache-listener>
+				<class-name>io.pivotal.gemfire.LoggingCacheListener</class-name>
+				<parameter name="filename">
+				   <string>MyLogFile.log</string>
+				</parameter>
+			</cache-listener>
+		</region-attributes>
+	</region>
+	
+</client-cache>

@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.pivotal.demo</groupId>
+    <artifactId>demo-gemfire-springxd-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>demo-gemfire-springxd-transformer</artifactId>
+  <name>Transformer for Spring XD</name>
+  <description>transformer code for Spring XD</description>
+		<properties>
+			<!-- Generic properties -->
+			<java.version>1.6</java.version>
+			<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+			<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	
+			<!-- Spring -->
+			<spring-framework.version>3.2.3.RELEASE</spring-framework.version>
+	
+			<!-- Hibernate / JPA -->
+			<hibernate.version>4.2.1.Final</hibernate.version>
+	
+			<!-- Logging -->
+			<logback.version>1.0.13</logback.version>
+			<slf4j.version>1.7.5</slf4j.version>
+	
+			<!-- Test -->
+			<junit.version>4.11</junit.version>
+			<jackson-2-version>2.6.1</jackson-2-version>
+		</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-gemfire</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>			
+		</dependencies>   
+    <repositories>
+        <repository>
+            <id>spring-io-release</id>
+            <url>http://repo.spring.io/release</url>
+        </repository>
+        <repository>
+            <id>jcenter</id>
+            <url>http://jcenter.bintray.com</url>
+        </repository>
+		<repository>
+			<id>gemfire-repository</id>
+			<name>Gemfire Repository</name>
+			<url>http://dist.gemstone.com/maven/release</url>
+		</repository>
+    </repositories>
+</project>
